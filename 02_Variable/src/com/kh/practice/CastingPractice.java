@@ -7,7 +7,7 @@ public class CastingPractice {
 		
 		CastingPractice ca  = new CastingPractice();
 		
-//		 ca.method1();
+		 ca.method1();
 		 ca.method2();
 		
 	}
@@ -18,6 +18,11 @@ public class CastingPractice {
 		
 		System.out.print("문자 :");
 		String num1 = ac.nextLine();
+		char ch = num1.charAt(0);
+		
+		System.out.println("A unicode : " + (int)ch);
+		System.out.println("B unicode : " + (ch+1));
+		
 		
 	
 	}

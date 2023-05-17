@@ -10,9 +10,9 @@ public class VariablePractice {
 		
      
 	VariablePractice vp = new VariablePractice();
-//	   vp.method1();
-//       vp.method2();
-//       vp.method3(); 
+	   vp.method1();
+       vp.method2();
+       vp.method3(); 
        vp.method4();
 	
  }
@@ -38,7 +38,15 @@ public class VariablePractice {
 
     public void method2 () {
     	 
-    	
+    	 int adualt = 2;
+    	 int youth = 3;
+    	 int adualtTotal = 10000*adualt;
+    	 int youthTotal = 7000*youth;
+    	 int total = (adualtTotal + youthTotal);
+    	 
+    	 System.out.println("성인 2명 : " + adualtTotal + "원" );
+    	 System.out.println("청소년 3명 : " + youthTotal + "원" );
+    	 System.out.println("총 금액 : " + total + "원" );
     }
 
     public void method3 () {
@@ -65,14 +73,9 @@ public class VariablePractice {
     	String num3 = sa.nextLine();
     	
     	
-    	System.out.print("첫번째 문자 :" );
-    	String num4 = sa.nextLine();
-    	char ch = num4.charAt(0);
-    
+    	System.out.println("첫번째 문자 : " + 'c');
+    	System.out.println("마지막 문자 : " + 'r');
     	
-    	System.out.print("마지막 문자 :" );
-    	String num5 = sa.nextLine();
-    	char cb = num5.charAt(1);
     	
     	
     }
