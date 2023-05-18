@@ -12,7 +12,7 @@ public class CastingPractice {
 		
 	}
 	
-	public void method1 () {
+	public void method1 () {//피드백
 		
 		Scanner ac = new Scanner(System.in);
 		
@@ -20,13 +20,13 @@ public class CastingPractice {
 		String num1 = ac.nextLine();
 		char ch = num1.charAt(0);
 		
-		System.out.println("A unicode : " + (int)ch);
-		System.out.println("B unicode : " + (ch+1));
+		System.out.println(ch +" unicode : " + (int)ch);
+		System.out.println((char)((int)ch+1)+" unicode : " + (ch+1));
 		
 		
 	
 	}
-	public void method2 () {
+	public void method2 () {//피드백
 		
 		Scanner ab = new Scanner(System.in);
 		
@@ -41,7 +41,7 @@ public class CastingPractice {
 		
 		
 		int sum = (num2 + num3 + num4);
-		float average = (float)(num2 + num3 + num4)/3;
+		float average = (float)(sum)/3;
 		
 		System.out.printf("총점 :%d\n평균 :%.2f", sum, average);
 	}

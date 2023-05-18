@@ -67,14 +67,15 @@ public class VariablePractice {
     	 
     	}
     
-    public void method4 () {
+    public void method4 () {//피드백
     	Scanner sa = new Scanner(System.in);
     	System.out.print("문자열을 입력하세요 :");
     	String num3 = sa.nextLine();
+    	char ch = num3.charAt(0);
+    	char ca = num3.charAt(num3.length()-1);
     	
-    	
-    	System.out.println("첫번째 문자 : " + 'c');
-    	System.out.println("마지막 문자 : " + 'r');
+    	System.out.println("첫번째 문자 : " + ch);
+    	System.out.println("마지막 문자 : " + ca);
     	
     	
     	

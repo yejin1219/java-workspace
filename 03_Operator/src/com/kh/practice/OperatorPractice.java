@@ -71,25 +71,25 @@ public class OperatorPractice {
 		
 	}
 	
-	public void method4() {
+	public void method4() { //피드백
 		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 : ");
 		int num1 = sc.nextInt();
 		
-		String result = (num1 / 2 == 0) ? "짝수다" :"홀수다";
+		String result = (num1 % 2 == 0) ? "짝수다" :"홀수다";
 		System.out.println(result);
 	}
 	
-	public void method5() {
+	public void method5() { //피드백
         
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("나이 : ");
 		int num1 = sc.nextInt();
 		
-		String result = (num1 <= 13) ? "어린이" : (num1 > 13 && num1 <= 19) ? "청소년" : "성인";
+		String result = (num1 <= 13) ? "어린이" : (num1 <= 19) ? "청소년" : "성인";
 		System.out.println(result);
 		
 	}
