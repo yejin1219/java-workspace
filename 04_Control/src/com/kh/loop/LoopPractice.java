@@ -12,9 +12,9 @@ class LoopPractice {
 //		c.method1();
 //		c.method2();
 //		c.method3();
-		c.method4(); 
+//		c.method4(); 
 //		c.method5();
-//		c.method6();
+		c.method6();
 	}
 	
 	
@@ -183,7 +183,9 @@ class LoopPractice {
     	int win = 0;
     	int lose =0;
     	int tie =0;
-    	outer:
+    	
+    	
+    	outer : 
     	while(true) {
     
     	 int num = (int)(Math.random()*3)+1; 
@@ -255,6 +257,7 @@ class LoopPractice {
     	    System.out.println();
     
       } 
+    	System.out.println();
     	System.out.println("이긴 횟수 : "+ win);
     	System.out.println("진 횟수 : "+ lose);
     	System.out.println("비긴 횟수 : "+ tie);
