@@ -13,8 +13,8 @@ public class ArrayPractice {
 //		a.method1();
 //		a.method2();
 //		a.method3();
-		a.method4();
-//		a.method5();
+//		a.method4();
+		a.method5();
 	}
 	
 	/*
@@ -118,16 +118,14 @@ public class ArrayPractice {
 			   ch[i] = str.charAt(i);
 	   }		
 		
-		char[] copy = new char[14];
-		for( i =0; i<ch.length; i++) {
-   		 copy[i] = ch[i];
-   	   }
+		char[] copy = null;
+		copy = ch.clone();
 		
 		for(i=8; i<copy.length;i++) {
 			copy [i] = '*';
 		}
 		
-		System.out.println(Arrays.toString(copy));
+		System.out.print(copy);
 		  
 	}
 	
@@ -147,16 +145,21 @@ public class ArrayPractice {
 		System.out.print("단어 입력 : ");
 		String str = sc.nextLine();
 		
+		char [] ch =  new char [str.length()];
 		
+		for(int i=0; i<ch.length; i++ ) {
+			ch[i] = str.charAt(i);
+			
+		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
+		char [] copy = null;
+		copy = ch.clone(); 
+				
+		for(int i=ch.length; i>=0;i--) {
+			copy [i] = ch[9-i];
+		}
+
+		System.out.print(copy);
 	}
 	
 }
