@@ -17,13 +17,13 @@ public class ConditionPractice {
 //		c.practice2();
 //		c.practice3();
 //		c.practice4();
-		c.practice5();
+//		c.practice5();
 //		c.practice6();
 //		c.practice7();
 //		c.practice8();
-		c.practice9();
-//		c.practice10();
-		c.practice11();
+//		c.practice9();
+		c.practice10();
+//		c.practice11();
 	}
 	
 	    
@@ -372,22 +372,20 @@ public class ConditionPractice {
     	System.out.println("2.수정");
     	System.out.println("3.조회");
     	System.out.println("4.삭제");
-    	System.out.println("5.종료");
+    	System.out.println("9.종료");
     	
     	System.out.print("메뉴 번호를 입력하세요 : ");
     	int menuNumber = sc.nextInt();
     	
-    	if(menuNumber == 1) {
-    		System.out.println("입력메뉴입니다.");
-    	}else if(menuNumber == 2) {
-    		System.out.println("수정메뉴입니다.");
-    	}else if(menuNumber == 3) {
-    		System.out.println("조회메뉴입니다.");
-    	}else if(menuNumber == 4) {
-    		System.out.println("삭제메뉴입니다.");
-    	}else if(menuNumber == 9){
-    		System.out.println("프로그램이 종료됩니다.");
+    	
+    	switch(menuNumber) {
+    	case 1 : System.out.println("입력메뉴입니다."); break;
+    	case 2 : System.out.println("수정메뉴입니다."); break;
+    	case 3 : System.out.println("조회메뉴입니다."); break;
+    	case 4 : System.out.println("삭제메뉴입니다."); break;
+    	case 9 : System.out.println("프로그램이 종료됩니다."); break;
     	}
+    	
     }
 
     /*
