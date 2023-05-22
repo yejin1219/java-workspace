@@ -19,6 +19,11 @@ public class ConditionPractice {
 //		c.practice4();
 		c.practice5();
 //		c.practice6();
+//		c.practice7();
+//		c.practice8();
+		c.practice9();
+//		c.practice10();
+		c.practice11();
 	}
 	
 	    
@@ -145,7 +150,7 @@ public class ConditionPractice {
     	int total = koreanScore + mathScore + englishScore;
     	float average = total/3;
     	
-    	if((koreanScore>=40 && mathScore>=40 && englishScore>=40) && average>=60 ) {
+    	if(koreanScore>=40 && mathScore>=40 && englishScore>=40 && average>=60 ) {
     		System.out.printf(" 국어 : %d\n 수학 : %d\n 영어 : %d\n 합계 : %d\n 평균 : %.1f\n",koreanScore,mathScore,englishScore,total,average);
     		System.out.println(" 축하합니다, 합격입니다! ");
     	}else {
@@ -164,9 +169,21 @@ public class ConditionPractice {
     public void practice5() {
 
     	System.out.print("구매한 옷 가격 : ");
-    	int charge = sc.nextInt();
+    	int price = sc.nextInt();
     	
+    	int result = 0;
     	
+    	if(price>=500000) {
+    		result = (int)(price-price*0.2f);
+    	}else if(price>=300000) {
+    		result = (int)(price-price*0.1f);
+    	}else if(price>=100000) {
+    		result = (int)(price -price*0.05f);
+    	}else {
+    		result = price;
+    	}
+    	
+    	System.out.println(result);
     	
     }
 
@@ -215,6 +232,22 @@ public class ConditionPractice {
     */
     public void practice7() {
  
+    	String id = "happy";
+    	String passWorld = "1234";
+    	
+    	System.out.print("아이디 : ");
+    	String id1 = sc.nextLine();
+    	
+    	System.out.print("비밀번호 : ");
+    	String passWorld1 = sc.nextLine();
+    	
+    	if(id1.equals(id) && passWorld1.equals(passWorld)) {
+    		System.out.println("로그인 성공!");
+    	}else if(!(passWorld1.equals(passWorld))) {
+    		System.out.println("비밀번호가 틀렸습니다.");
+    	}else if(!(id1.equals(id))) {
+    		System.out.println("아이디가 틀렸습니다.");
+    	}
     }
 
     /*
@@ -233,6 +266,30 @@ public class ConditionPractice {
      */
     public void practice8() {
        
+    	double height = 0;
+    	double weight = 0;
+    	
+    	System.out.print("키(m)를 입력해 주세요 : ");
+    	height = sc.nextDouble();
+    	System.out.print("몸무게(kg)를 입력해 주세요 : ");
+    	weight = sc.nextDouble();
+    	
+    	double bmi = weight / (height*height);
+    	System.out.println("BMI 지수 : " + bmi);
+    	String str = "";
+    	
+    	if(bmi>=30) {
+    		str = "고도비만";
+    	}else if(bmi>=25) {
+    		str = "비만";
+    	}else if(bmi>=23) {
+    		str = "과체중";
+    	}else if(bmi>=18.5) {
+    		str = "정상체중";
+    	}else {
+    		str = "저체중";
+    	}
+    	System.out.println(str);
     }
 
     /*
@@ -248,6 +305,53 @@ public class ConditionPractice {
      */
     public void practice9() {
 
+    	int num1=0;
+    	int num2=0;
+    	char ch = '+';
+    	int a = num1 + num2;
+    	int b = num1 - num2;
+    	int c = num1 * num2;
+    	int d = num1/num2;
+    	int e = num1%num2;  
+    	
+    	System.out.print("피연산자1 입력 : ");
+    	 num1 = sc.nextInt();
+    	if( num1<0) {
+    		System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    	}else {
+    		System.out.print("피연산자2 입력 : ");
+        	  num2 = sc.nextInt();
+    	}
+    	
+    	if(num2<0) {
+    		System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    	}else {
+    		System.out.print("연산자를 입력 : ");
+    		String str = sc.nextLine();
+    		ch = str.charAt(0);
+    		
+    		switch(ch) {
+    		case '+': 
+    			System.out.println(num1 + ch + num2 + "=" + a ); 
+  		        break;
+    		case '-': 
+    			System.out.println(num1 + ch + num2 + "=" + b ); 
+  		        break;
+    		case '*': 
+    			System.out.println(num1 + ch + num2 + "=" + c ); 
+  		        break;
+    		case '/': 
+    			System.out.println(num1 + ch + num2 + "=" + d ); 
+  		        break;
+    		case '%':
+    			System.out.println(num1 + ch + num2 + "=" + e ); 
+  		        break;
+    		default : 
+    			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    			
+    		}
+    	}
+    
     }
 
     /*
@@ -264,6 +368,26 @@ public class ConditionPractice {
      */
     public void practice10() {
 
+    	System.out.println("1.입력");
+    	System.out.println("2.수정");
+    	System.out.println("3.조회");
+    	System.out.println("4.삭제");
+    	System.out.println("5.종료");
+    	
+    	System.out.print("메뉴 번호를 입력하세요 : ");
+    	int menuNumber = sc.nextInt();
+    	
+    	if(menuNumber == 1) {
+    		System.out.println("입력메뉴입니다.");
+    	}else if(menuNumber == 2) {
+    		System.out.println("수정메뉴입니다.");
+    	}else if(menuNumber == 3) {
+    		System.out.println("조회메뉴입니다.");
+    	}else if(menuNumber == 4) {
+    		System.out.println("삭제메뉴입니다.");
+    	}else if(menuNumber == 9){
+    		System.out.println("프로그램이 종료됩니다.");
+    	}
     }
 
     /*
@@ -314,6 +438,38 @@ public class ConditionPractice {
      */
     public void practice11() {
         
+    	System.out.print("중간 고사 점수 : ");
+    	double middleScore = sc.nextDouble()*0.2f;
+    	System.out.print("기말 고사 점수 : ");
+    	double finalScore = sc.nextDouble()*0.3f;
+    	System.out.print("과제 점수 : ");
+    	double taskScore = sc.nextDouble()*0.3f;
+    	System.out.print("출석 횟수 : ");
+    	double countScore = sc.nextDouble();
+    	System.out.println("==========결과=========");
+    	
+    	double total = middleScore + finalScore + taskScore + countScore;
+    	
+    	if(total>=70 && countScore>=(int)(20*0.7f)) {
+    		
+    		System.out.printf("중간 고사 점수(20) : %.1f%n", middleScore);
+        	System.out.printf("기말 고사 점수(30) : %.1f%n", finalScore);
+        	System.out.printf("과제 점수(30) : %.1f%n", taskScore);
+        	System.out.printf("출석 점수(20) : %.1f%n", countScore);
+        	System.out.printf("총점 : %.1f%n",total);
+    		System.out.println("PASS");
+    	}else {
+    		
+    		if(total<=70 && countScore>=(int)(20*0.7f))
+    		  System.out.printf("FAIL [점수미달] (총점 : %.1f )", total);
+    		else if(total>=70 && countScore<=(int)(20*0.7f)) {
+    	      System.out.printf("FAIL [출석 횟수 부족] (%.0f / 20)", countScore);
+    		}else if(total<=70 && countScore<=(int)(20*0.7f)) {
+    		 System.out.printf("FAIL [점수미달] (총점 : %.1f )%n", total);
+    		 System.out.printf("FAIL [출석 횟수 부족] (%.0f / 20)", countScore);
+    		}
+    	 	
     }
     
+ }
 }
