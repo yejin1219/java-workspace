@@ -33,7 +33,7 @@ public class C_Sorting {
 		
 		//내림차순 정렬
 		Arrays.sort(arr, Collections.reverseOrder());
-		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(arr)); // [사과, 배, banana, Orange, Lemon, Kiwi]
 	}
 	
 	// 최댓값과 최소값 구하기 
@@ -72,8 +72,9 @@ public class C_Sorting {
 		//i=2    j=3~9
 		//.....
 		
-		//1.비교주체 
-		for(int i=0; i<arr.length; i++) {
+		
+	 //1.비교 주체 	
+     for(int i=0; i<arr.length; i++) {
 			
 			//2. 비교대상
 			for(int j=i+1; j<arr.length; j++){
@@ -86,11 +87,13 @@ public class C_Sorting {
 				}
 			}
 		}
+			
 		
-		System.out.println(Arrays.toString(arr)); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 		
+		
+	System.out.println(Arrays.toString(arr)); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	}
+
 	
 	/*
 	 * 삽입정렬(insertion sort) 
@@ -148,8 +151,8 @@ public class C_Sorting {
 	public void method6() {
 		int [] arr = {7,5,9,0,3,1,6,2,4,8};
 		
-		for(int i=arr.length-1; i>=0; i--) {
-		for(int j=0;j<arr.length-1;j++) {
+		for(int i=0; i<arr.length-1; i++) {
+		 for(int j=0;j<arr.length-1;j++) {
 			
 			if(arr[j] > arr[j+1]) {
 				int tmp = arr[j];
@@ -175,8 +178,8 @@ public class C_Sorting {
 //		c.method2();
 //		c.method3();
 //		c.method4();
-		c.method5();
-//		c.method6();
+//		c.method5();
+		c.method6();
 		
 	}
 
