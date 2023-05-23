@@ -136,7 +136,7 @@ public class ArrayPractice {
 	 * 
 	 * 단어 입력 : programming
 	 * gnimmargorp
-	 * 
+	 * 11 / 인덱스 범위 0~10
 	 * */
 	public void method5() {
 		
@@ -145,7 +145,7 @@ public class ArrayPractice {
 		System.out.print("단어 입력 : ");
 		String str = sc.nextLine();
 		
-		char [] ch =  new char [str.length()];
+		char [] ch =  new char [str.length()]; //str.length()=11 
 		
 		for(int i=0; i<ch.length; i++ ) {
 			ch[i] = str.charAt(i);
@@ -155,8 +155,8 @@ public class ArrayPractice {
 		char [] copy = null;
 		copy = ch.clone(); 
 				
-		for(int i=ch.length; i>=0;i--) {
-			copy [i] = ch[9-i];
+		for(int i=ch.length-1; i>=0;i--) {
+			copy [i] = ch[ch.length-1-i];
 		}
 
 		System.out.print(copy);
