@@ -12,8 +12,8 @@ public class ArrayPractice {
 		ArrayPractice a =new ArrayPractice();
 //		a.method1();
 //		a.method2();
-//		a.method3();
-		a.method4();
+		a.method3();
+//		a.method4();
 //		a.method5();
 	}
 	
@@ -85,15 +85,36 @@ public class ArrayPractice {
 		
 		System.out.print("메뉴를 입력하세요 : ");
 		String str = sc.nextLine();
+		String result = null;
 		
-		outer:
 		for(int i = 0; i < menu.length; i++) {
-			if(str.equals(menu[i])) {
-				System.out.println("배달 가능");
-				break outer;
-			}else System.out.println("배달 불가능");
-			 break outer;
+			if(menu[i].equals(str)) {
+		
+				result = menu[i];
+				break ;
+			}	
 		}
+		
+		if (str.equals(result)) {
+			System.out.println("배달 가능");
+		}else System.out.println("배달 불가능");
+		
+		
+			
+		
+		
+			
+		
+		
+		
+//		outer:
+//		for(int i = 0; i < menu.length; i++) {
+//			if(str.equals(menu[i])) {
+//				System.out.println("배달 가능");
+//				break outer;
+//			}else System.out.println("배달 불가능");
+//			 break outer;
+//		}
 	}
 	
 	/*
