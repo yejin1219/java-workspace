@@ -66,7 +66,7 @@ public class Calculator {
 	// 나누기 -> 형태 :  몫은 1, 나머지는 3
 	public static String divide(int a, int b) {
 				
-		return"몫은 " + quotient(a,b) +" 나머지는 " + remainder(a,b) ;
+		return "몫은 " + quotient(a,b) +" 나머지는 " + remainder(a,b) ;
 	}
 	
 	public static int quotient(int a, int b) {
