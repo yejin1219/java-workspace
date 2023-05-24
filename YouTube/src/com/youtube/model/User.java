@@ -11,29 +11,29 @@ public class User {
 	
 	//<기능>
 	// 로그인
-	public void login() {
-		
+	public boolean login() {
+		return false;
 	}
 	
 	// 회원가입
-	public void signUp() {
-		
+	public boolean signUp() {
+		return false;
 	}
 	
 	// 프로필 보기
-	public void viewProfile() {
-		
+	public User viewProfile() {
+		return null;
 	}
 	
 	
 	// 프로필 수정
-	public void updateProfile() {
-		
+	public User updateProfile() {
+		return null;
 	}
 
 	
 	// 계정 삭제
-	public void deleteProfile() {
-		
+	public boolean deleteProfile() {
+		return false;
 	}
 }

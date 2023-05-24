@@ -19,30 +19,30 @@ public class Video {
      delete 계정 삭제 기능
 	 **/
 	// 영상 업로드
-	public void upload() {
-		
+	public Video upload() {
+		return null;
 	}
 	
 	// 영상 목록
-	public void videoList() {
-		
+	public Video videoList() {
+		return null;
 	}
 	
 	// 영상 1개 보기
-	public void viewVideo() {
-		
+	public Video viewVideo() {
+		return null;
 	}
 	
 	
 	// 동영상 수정 
-	public void updateVideo() {
-		
+	public Video updateVideo() {
+		return null;
 	}
 	
 	
 	// 동영상 삭제 
-	public void deleteVideo() {
-		
+	public boolean deleteVideo() {
+		return false;
 	}
 	
 
