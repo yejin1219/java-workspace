@@ -101,21 +101,13 @@ public class ArrayPractice {
 		
 		
 			
-		
+	}		
 		
 			
 		
 		
 		
-//		outer:
-//		for(int i = 0; i < menu.length; i++) {
-//			if(str.equals(menu[i])) {
-//				System.out.println("배달 가능");
-//				break outer;
-//			}else System.out.println("배달 불가능");
-//			 break outer;
-//		}
-	}
+
 	
 	/*
 	 * 
