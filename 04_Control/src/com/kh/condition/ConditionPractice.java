@@ -458,16 +458,15 @@ public class ConditionPractice {
     		System.out.println("PASS");
     	}else {
     		
-    		if(total<=70 && countScore>=(int)(20*0.7f))
+    		if(total<=70) {
     		  System.out.printf("FAIL [점수미달] (총점 : %.1f )", total);
-    		else if(total>=70 && countScore<=(int)(20*0.7f)) {
-    	      System.out.printf("FAIL [출석 횟수 부족] (%.0f / 20)", countScore);
-    		}else if(total<=70 && countScore<=(int)(20*0.7f)) {
-    		 System.out.printf("FAIL [점수미달] (총점 : %.1f )%n", total);
-    		 System.out.printf("FAIL [출석 횟수 부족] (%.0f / 20)", countScore);
+    		 }
+    		if(countScore<=(int)(20*0.7f)){
+    		  System.out.printf("FAIL [출석 횟수 부족] (%.0f / 20)", countScore);
+    		 }
+    		
     		}
-    	 	
+
     }
     
  }
-}

@@ -188,27 +188,52 @@ class LoopPractice {
     	outer : 
     	while(true) {
     
-    	 int num = (int)(Math.random()*3)+1; 
+    	 
     	
     	
     	 System.out.print("가위바위보 : ");
     	 String input = sc.nextLine();
-    	 System.out.print("컴퓨터 : ");
-    	 String com = sc.nextLine();
-    	 System.out.println(str + " : " + input);
     	
-    	 switch(com) {
+          int me = 0;
+  	
+    	 switch(input) {
     	   case "바위":
-    		 num =1; break;
+    		   me =1; break;    //me1=바위
     	   case "가위":
-    		num =2; break;
+    		   me =2; break;    //me2=가위
     	   case "보":
-    		num =3; break;
+    		me =3; break;    //me3=보
    
     	    }
     
+    	 int num = (int)(Math.random()*3)+1; 
+    	 String computer ="";
+    	 switch(num) {
+  	       case 1:
+  		     computer ="바위"; break;  // computer1 =바위
+  	       case 2:
+  	    	 computer ="가위"; break;  // computer2 =가위
+  	       case 3:
+  	    	 computer ="보"; break;  // computer3 =보
+ 
+  	    } System.out.printf("컴퓨터 : %s/n", str);
+  
     	 
-    	
+    	if(me == num) {
+    		System.out.println("비겼습니다.");
+			 ++tie;
+    	}else if(me==1 && num==2 || me==2&&num==1) {
+    		System.out.println("이겼습니다.");
+    		++win;
+    	}else if(me ==) {
+    		
+    		System.out.println("졌습니다. ㅠㅠ");
+			++lose;
+    	}
+  	    
+  	    
+  	    
+  	    
     	  switch(input) {
     	      case "바위" : 
     		    if(num == 1) {
