@@ -18,12 +18,23 @@ public class SnackController {
 	
 	
 	// 데이터를 setter를 이용해 저장하고 저장 되었다는 결과를 반환하는 메서드
-	public boolean saveData(Snack s1) {
+	public boolean saveData(Snack s1) {// 참조형 매개변수 사용 = s1의 주소를 복사 
+		
 		this.s1.setKind(s1.getKind());
 		this.s1.setName(s1.getName());
 		this.s1.setFlavor(s1.getFlavor());
 		this.s1.setNumOf(s1.getNumOf());
 		this.s1.setPrice(s1.getPrice());
+		
+		
+		
+		
+		
+//		this.s1.setKind(s1.getKind());
+//		this.s1.setName(s1.getName());
+//		this.s1.setFlavor(s1.getFlavor());
+//		this.s1.setNumOf(s1.getNumOf());
+//		this.s1.setPrice(s1.getPrice());
 		
 		return true;
 	}
