@@ -4,46 +4,96 @@ import java.util.Date;
 
 public class Video {
 
-	public String title;
-	public String comment;
-	public Date uploadAt;
-	public int count;
-	public String imgUrl;
-	public String fileUrl;
+	private String title;
+	private String comment;
+	private Date uploadAt;
+	private int count;
+	private String imgUrl;
+	private String fileUrl;
 	
 	
-	/*CRUD
-     creat 추가 기능
-     Read 보여주는 기능
-     update 수정 기능
-     delete 계정 삭제 기능
-	 **/
-	// 영상 업로드
-	public Video upload() {
-		return null;
+	public Video() {
+	}
+
+
+	public Video(String title, String comment, Date uploadAt, int count, String imgUrl, String fileUrl) {
+		this.title = title;
+		this.comment = comment;
+		this.uploadAt = uploadAt;
+		this.count = count;
+		this.imgUrl = imgUrl;
+		this.fileUrl = fileUrl;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public String getComment() {
+		return comment;
+	}
+
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+
+	public Date getUploadAt() {
+		return uploadAt;
+	}
+
+
+	public void setUploadAt(Date uploadAt) {
+		this.uploadAt = uploadAt;
+	}
+
+
+	public int getCount() {
+		return count;
+	}
+
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Video [title=" + title + ", comment=" + comment + ", uploadAt=" + uploadAt + ", count=" + count
+				+ ", imgUrl=" + imgUrl + ", fileUrl=" + fileUrl + "]";
 	}
 	
-	// 영상 목록
-	public Video videoList() {
-		return null;
-	}
-	
-	// 영상 1개 보기
-	public Video viewVideo() {
-		return null;
-	}
 	
 	
-	// 동영상 수정 
-	public Video updateVideo() {
-		return null;
-	}
-	
-	
-	// 동영상 삭제 
-	public boolean deleteVideo() {
-		return false;
-	}
 	
 
 }
