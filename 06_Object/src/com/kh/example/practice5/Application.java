@@ -130,7 +130,7 @@ public class Application {
 		
 	
 	
-	public void printEmp() {
+	public void printEmp() { 
 //		3번
 		System.out.println(employeeController.info());
 	}
