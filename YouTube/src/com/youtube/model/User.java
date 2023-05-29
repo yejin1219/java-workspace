@@ -9,6 +9,7 @@ public class User {
 	private String nickName;
 	private char gender;
 	
+	Video video; // user에 비디오 포함 
 	//기본생성자
 	public User() {
 	}
