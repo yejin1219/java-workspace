@@ -12,6 +12,7 @@ public class Circle extends Point {
 		super(x, y);
 		this.radius = radius;
 	}
+	
 
 
 	public int getRadius() {
