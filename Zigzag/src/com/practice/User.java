@@ -1,4 +1,4 @@
-package com.zigzag.model;
+package com.practice;
 
 public class User {
 	public String email;

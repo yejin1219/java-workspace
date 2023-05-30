@@ -1,4 +1,4 @@
-package com.zigzag;
+package com.practice;
 
 public class Application {
 

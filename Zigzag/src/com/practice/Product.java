@@ -1,4 +1,4 @@
-package com.zigzag.model;
+package com.practice;
 
 import java.util.Date;
 
