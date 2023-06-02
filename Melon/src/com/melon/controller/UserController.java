@@ -4,6 +4,7 @@ import com.melon.model.User;
 
 public class UserController {
 
+	User user = null;
 	
 	//로그인
 			public boolean login() {
