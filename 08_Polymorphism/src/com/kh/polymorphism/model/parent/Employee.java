@@ -3,7 +3,7 @@ package com.kh.polymorphism.model.parent;
 public class Employee {
 
 	private String name;
-	private int salary;
+	private int salary; //급여 
 	
 	
 	public Employee() {

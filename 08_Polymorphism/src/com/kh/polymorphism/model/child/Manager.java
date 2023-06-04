@@ -4,7 +4,7 @@ import com.kh.polymorphism.model.parent.Employee;
 
 public class Manager extends Employee{
 
-	private String dept;
+	private String dept; //부서
 
 	public Manager() {
 	}

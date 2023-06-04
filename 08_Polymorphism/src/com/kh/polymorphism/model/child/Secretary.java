@@ -4,7 +4,7 @@ import com.kh.polymorphism.model.parent.Employee;
 
 public class Secretary extends Employee{
 
-	private String nameOfBoss;
+	private String nameOfBoss; //보스 이름 
 
 	public Secretary() {
 	}

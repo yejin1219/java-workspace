@@ -4,8 +4,8 @@ import com.kh.polymorphism.model.parent.Employee;
 
 public class Engineer extends Employee{
 
-	private String tech;
-	private int bonus;
+	private String tech; //기술
+	private int bonus; //보너스 
 	
 	
 	public Engineer() {
