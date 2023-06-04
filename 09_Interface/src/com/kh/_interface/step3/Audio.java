@@ -13,7 +13,7 @@ public class Audio implements RemoteControl, Searchable{ // 인터페이스 여�
 		}else {
 			this.volume = volume;
 		}
-		System.out.println("현재 Audio 볼륨" + this.volume);
+		System.out.println("현재 Audio 볼륨 : " + this.volume);
 	}
 
 	@Override

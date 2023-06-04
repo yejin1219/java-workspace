@@ -69,7 +69,7 @@ public class Application {
 		tv.turnOn();
 		tv.setVolume(-1);
 		tv.turnOff();
-		
+		System.out.println();
 		
 		Audio audio = new Audio();
 		audio.turnOn();

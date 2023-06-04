@@ -45,6 +45,7 @@ public class Application {
 		
 		for(Sports s : sports) {
 			s.rule();
+		
 		}
 		
 		
@@ -52,7 +53,7 @@ public class Application {
 				          new PotatoPizza(27900, "도미노피자"),
 				          new PineApplePizza(23000, "피자알볼로")};
 				          
-				    for(Pizza p : pizza) {
+				    for(Pizza p : pizza) { 
 				    	p.makePizza();
 				    }
 		}
