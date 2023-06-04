@@ -1,4 +1,4 @@
-package com.kh.practice1;
+ package com.kh.practice1;
 
 public class C_UnCheckedException {
 

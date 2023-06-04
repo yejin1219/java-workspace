@@ -25,7 +25,7 @@ public class B_Throws {
 		} catch (IOException e) {
 			
 			e.printStackTrace();
-		}catch(Exception e) { //<= 가장 하위 Exception e 클래스가 맨 아래로 ( 여기에서 처럼 여러 catch로 Exception클래스 사용해서 에러 잡을 때)
+		}catch(Exception e) { //<= 가장 상위 Exception e 클래스가 맨 아래로 ( 여기에서 처럼 여러 catch로 Exception클래스 사용해서 에러 잡을 때)
 			
 			e.printStackTrace();
 		}
