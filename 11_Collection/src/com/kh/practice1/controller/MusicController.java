@@ -3,7 +3,6 @@ package com.kh.practice1.controller;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.kh.list.model.Person;
 import com.kh.practice1.compare.ArtistAscending;
 import com.kh.practice1.compare.TitleAscending;
 import com.kh.practice1.model.Music;
@@ -53,7 +52,7 @@ public class MusicController {
     public  Music removeMusic(String title) {
 //		for(Music music :list) {
 //			if(music.getTitle().equals(title)) { //정확하게 일치 하도록 equals 씀
-//				list.remove(music); //리턴타입이 boolean 
+//				list.remove(music); //()안에 객체가 들어가 있어서 리턴타입이 boolean 
 //				 return music;
 //			}
 //		}
@@ -61,7 +60,7 @@ public class MusicController {
     	
     	for(int i =0; i<list.size(); i++) {
     		if(list.get(i).getTitle().equals(title)) {
-    			return list.remove(i); //리턴타입이 music 
+    			return list.remove(i); //i는 인덱스 값, 해당 인덱스가 가리키는 객체 제거 (리턴타입:객체)
     		}
     	}
     	
