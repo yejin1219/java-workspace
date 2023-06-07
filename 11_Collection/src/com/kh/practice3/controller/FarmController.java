@@ -16,7 +16,7 @@ public class FarmController {
 		// f와 amount를 각각 키와 값으로 저장 후 true 반환
 		
 		// 존재할 경우 false 반환
-		if(!(hMap.keySet().contains(f))) {
+		if(!(hMap.containsKey(f))) {
 			 hMap.put(f, amount);
 			 return true;
 		}
@@ -31,7 +31,7 @@ public class FarmController {
 		// hMap에 f 삭제 후 true 반환
 		
 		// 존재하지 않을 경우 false 반환
-		if(hMap.keySet().contains(f)) {
+		if(hMap.containsKey(f)) {
 			hMap.remove(f);
 			 return true;
 		}
@@ -44,8 +44,8 @@ public class FarmController {
 		// f와 amount 저장 후 true 반환
 		
 		// 존재하지 않을 경우 false 반환
-		if(hMap.keySet().contains(f)) {
-			hMap.put(f, amount);
+		if(hMap.containsKey(f)) {
+			hMap.replace(f, amount);
 			 return true;
 		}
 		return false;

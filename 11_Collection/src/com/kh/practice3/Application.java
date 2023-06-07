@@ -1,6 +1,5 @@
 package com.kh.practice3;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
@@ -65,7 +64,7 @@ public class Application {
 	}
 	
 	
-	public void adminMenu() {
+	public void adminMenu()throws Exception {
 
 		System.out.println("****** 직원 메뉴 ******");
 		System.out.println("1. 새 농산물 추가");
@@ -202,12 +201,10 @@ public class Application {
 		 * */
 		try {
 			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-			System.out.print("추가할 종류 번호 : ");
+			System.out.print("삭제할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
-			System.out.print("추가할 이름 : ");
+			System.out.print("삭제할 이름 : ");
 			String name = sc.nextLine();
-			System.out.print("추가할 수량 : ");
-			int amount = Integer.parseInt(sc.nextLine());
 			
 			Fruit fruit = new Fruit("과일",name);
 			Vegetable vg = new Vegetable("채소",name);
@@ -314,7 +311,16 @@ public class Application {
 	public void printFarm() {
 		
 		// fc의 printFarm()의 반환 값을 이용하여 keySet()을 통해 "종류 : 이름(n개)" 형식으로 출력
-		 farm = fc.printFarm().keySet();
+		Set set = fc.printFarm().keySet();
+		Iterator<Farm> it = set.iterator();
+		
+		while(it.hasNext()) {
+			Farm farm = it.next();
+			System.out.println(farm.getKind() + ":" +  farm.getName() + "(" + fc.printFarm().get(farm)+"개)");
+		}
+		
+	}
+		
 		
 		
 		
@@ -332,11 +338,50 @@ public class Application {
 		 * false면 "마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
 		 * */
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("구매 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("구매할 것 : ");
-		String name = sc.nextLine();
+		
+		
+		
+		
+		try {
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.print("구매 종류 번호 : ");
+			int select = Integer.parseInt(sc.nextLine());
+			System.out.print("구매할 것 : ");
+			String name = sc.nextLine();
+			
+			Fruit fruit = new Fruit("과일",name);
+			Vegetable vg = new Vegetable("채소",name);
+			Nut nut = new Nut("견과",name);
+			
+			switch(select) {
+			case 1 :
+				if(fc.buyFarm( fruit)) {
+					System.out.println("구매에 성공하였습니다.");
+				}else {
+				   System.out.println("마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요.");}
+				break;
+			case 2 :
+				if(fc.buyFarm( vg)) {
+				System.out.println("구매에 성공하였습니다.");
+			}else {
+			   System.out.println("마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요.");}
+				break;
+			case 3 :
+				if(fc.buyFarm( nut)) {
+					System.out.println("구매에 성공하였습니다.");
+				}else {
+				   System.out.println("마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요.");}
+				break;
+			} 
+			
+			this.customerMenu();
+			
+			
+		}catch(Exception e){
+			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+			this.buyFarm();
+		}
+		
 		
 	}
 	
@@ -352,11 +397,47 @@ public class Application {
 		 * false면 "구매 목록에 존재하지 않습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * */
 	
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("취소 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("구매 취소할 것 : ");
-		String name = sc.nextLine();
+		
+		try {
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.print("취소 종류 번호 : ");
+			int select = Integer.parseInt(sc.nextLine());
+			System.out.print("구매 취소할 것 : ");
+			String name = sc.nextLine();
+			
+			Fruit fruit = new Fruit("과일",name);
+			Vegetable vg = new Vegetable("채소",name);
+			Nut nut = new Nut("견과",name);
+			
+			switch(select) {
+			case 1 :
+				if(fc.removeFarm( fruit)) {
+					System.out.println("구매 취소에 성공하였습니다.");
+				}else {
+				   System.out.println("구매 목록에 존재하지 않습니다. 다시 입력해주세요.");}
+				break;
+			case 2 :
+				if(fc.removeFarm( vg)) {
+				System.out.println("구매 취소에 성공하였습니다.");
+			}else {
+			   System.out.println("구매 목록에 존재하지 않습니다. 다시 입력해주세요.");}
+				break;
+			case 3 :
+				if(fc.removeFarm( nut)) {
+					System.out.println("구매 취소에 성공하였습니다.");
+				}else {
+				   System.out.println("구매 목록에 존재하지 않습니다. 다시 입력해주세요.");}
+				break;
+			} 
+			
+			this.customerMenu();
+			
+			
+		}catch(Exception e){
+			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+			this.removeFarm();
+		}
+		
 		
 	}
 	
@@ -364,6 +445,9 @@ public class Application {
 		
 		// fc의 printBuyFarm()의 반환 값을 이용하여 출력
 		
+		
+		for(Farm f : fc.printBuyFarm()) { 
+			System.out.println(f.getKind() + ":"+f.getName());
 	}
-
+	}
 }
