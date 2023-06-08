@@ -1,5 +1,7 @@
 package com.youtube.model;
 
+import java.util.List;
+
 public class User {
 
 	private String email;
@@ -9,22 +11,8 @@ public class User {
 	private String nickName;
 	private char gender;
 	
-	Video video; // user에 비디오 포함 
-	//기본생성자
-	public User() {
-	}
+	private List<Video> vidieos; // 한 사람이 여러개 비디오를 가질 수 있다. 
 
-	public User(String email, String phone, String id, String password, String nickName, char gender) {
-		this.email = email;
-		this.phone = phone;
-		this.id = id;
-		this.password = password;
-		this.nickName = nickName;
-		this.gender = gender;
-	}
-
-	
-	//getter setter 만들기
 	public String getEmail() {
 		return email;
 	}
@@ -73,14 +61,14 @@ public class User {
 		this.gender = gender;
 	}
 
-	
-	
-	//toString 만들기
-	@Override
-	public String toString() {
-		return "User [email=" + email + ", phone=" + phone + ", id=" + id + ", password=" + password + ", nickName="
-				+ nickName + ", gender=" + gender + "]";
+	public List<Video> getVidieos() {
+		return vidieos;
 	}
+
+	public void setVidieos(List<Video> vidieos) {
+		this.vidieos = vidieos;
+	}
+	
 	
 	
 	
