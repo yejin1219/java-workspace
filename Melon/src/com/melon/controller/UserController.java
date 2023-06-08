@@ -8,10 +8,10 @@ public class UserController {
 	
 			public boolean login(String id, String password) {
 				if(this.user!=null && user.getId().equals(id) && user.getPassword().equals(password)) {
-					return false;
+					return true;
 				}
 				
-				return true;
+				return false;
 			}
 			
 			//회원가입
@@ -31,7 +31,7 @@ public class UserController {
 		    public User settingProfile(User user) {
 		    	
 		    	if(login(this.user.getId(), this.user.getPassword())) {
-		    		this.user.setNickName(user.nickName);
+		    		this.user.setNickName(user.getNickName());
 		    	}
 		    	
 		    	return null;

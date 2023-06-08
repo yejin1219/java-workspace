@@ -1,4 +1,4 @@
-package com.melon.controller;
+package com.melon.impl;
 
 import com.melon.model.User;
 
