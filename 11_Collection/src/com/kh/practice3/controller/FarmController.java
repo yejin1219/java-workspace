@@ -45,7 +45,7 @@ public class FarmController {
 		
 		// 존재하지 않을 경우 false 반환
 		if(hMap.containsKey(f)) {
-			hMap.replace(f, amount);
+			hMap.replace(f, amount);  // put 써도 됨
 			 return true;
 		}
 		return false;
@@ -64,9 +64,10 @@ public class FarmController {
 		
 		// 존재하지 않으면 false 반환
 		
-		if(list.equals(f) && list.size()>=1) {
+		if(hMap.containsKey(f) && hMap.get(f) > 0) {
 			list.add(f);
-			return hMap.remove(f, 1);
+			 hMap.put(f, hMap.get(f)-1); // map은 추가나 수정때 put씀 키 값이 중복되면 마지막 등록된것으로 들어가기 때문 
+			 return true;
 		}
 		return false;
 	}
@@ -78,9 +79,9 @@ public class FarmController {
 		
 		// 아니면 false 반환
 		
-		if(list.equals(f)) {
+		if(list.contains(f)) {
 			 list.remove(f);
-			 hMap.put(f, 1);
+			 hMap.put(f,  hMap.get(f)+1);
 			 return true;
 		}
 
