@@ -6,6 +6,7 @@ public class UserController {
 	User user = null;
 	
 	
+	        //로그인
 			public boolean login(String id, String password) {
 				if(this.user!=null && user.getId().equals(id) && user.getPassword().equals(password)) {
 					return true;

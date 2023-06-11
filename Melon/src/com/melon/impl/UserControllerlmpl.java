@@ -8,7 +8,7 @@ public interface UserControllerlmpl {
 	public boolean login(); 
 	
 	//회원가입
-    public boolean signUp();
+	public void signUp();
 
 	//회원정보 수정
     public User updateInformation();
@@ -20,5 +20,5 @@ public interface UserControllerlmpl {
     public User settingPay();
 
 	//계정 삭제 
-    public boolean deleteInformation();
+    public void deleteInformation();
 }
