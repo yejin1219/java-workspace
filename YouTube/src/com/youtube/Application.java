@@ -1,6 +1,7 @@
 package com.youtube;
 
 import com.youtube.controller.CommentController;
+import com.youtube.model.Comment;
 
 public class Application {
 
