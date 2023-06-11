@@ -11,11 +11,32 @@ public class User {
 	private String address;
 	private char gender;
 	
+	
 	private List<Album> albums;
+
+	public User() {
+		
+	}
+	
 
 	public String getEmail() {
 		return email;
 	}
+
+	public User(String email, String phone, String id, String password, String nickName, String address, char gender,
+			 List<Album> albums) {
+		super();
+		this.email = email;
+		this.phone = phone;
+		this.id = id;
+		this.password = password;
+		this.nickName = nickName;
+		this.address = address;
+		this.gender = gender;
+		
+		this.albums = albums;
+	}
+
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -69,6 +90,7 @@ public class User {
 		this.gender = gender;
 	}
 
+	
 	public List<Album> getAlbums() {
 		return albums;
 	}
@@ -76,7 +98,7 @@ public class User {
 	public void setAlbums(List<Album> albums) {
 		this.albums = albums;
 	}
-	
+
 	
 
 
