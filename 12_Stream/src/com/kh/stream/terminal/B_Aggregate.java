@@ -3,6 +3,7 @@ package com.kh.stream.terminal;
 import java.util.Arrays;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
+import java.util.stream.IntStream;
 
 /*
  * 기본 집계 
@@ -58,7 +59,33 @@ public class B_Aggregate {
 		OptionalInt first = Arrays.stream(array).findFirst();
 		System.out.println("첫번째 값 : " + first.getAsInt());
 		
+	
+		
+		//커스텀 집계
+		// array : 1,2,3,4,5,6 -> 2 * 4* 6
+		
+		/*
+		Arrays.stream(array).filter(value -> value % 2 == 0).reduce((x,y) -> x *y).ifPresent(value ->System.out.println(value)); //48
+		*/
+		
+		// ↓ 위의 식을 풀어서 쓴 것
+		IntStream stream = Arrays.stream(array);
+		IntStream filter = stream.filter(value -> value % 2 ==0); // 2의 배수만 
+		OptionalInt reduce = filter.reduce((x,y) -> x*y); //필터안하면 1*2*3*4*5*6 요렇게 계산됨 
+		System.out.println(reduce.getAsInt());
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
+	
+	 
+	
 
 }
