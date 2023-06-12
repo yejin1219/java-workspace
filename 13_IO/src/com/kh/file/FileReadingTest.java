@@ -21,11 +21,11 @@ public class FileReadingTest {
 	public static void main(String[] args) {
 
 		FileReadingTest f = new FileReadingTest();
-		f.fileSave();
-//		f.fileRead(); 
+//		f.fileSave();
+		f.fileRead(); 
 //		f.method1();
 //		f.method2(); // 다른 파일로 출력!
-		f.method3(); // 다른 파일로 출력!
+		//f.method3(); // 다른 파일로 출력!
 	}
 	
 	public void fileSave() {
@@ -48,6 +48,7 @@ public class FileReadingTest {
 		}
 	}
 	
+	
 	public void fileRead() {
 		// FileReader를 사용해서 파일에서 데이터를 문자 단위로 읽어온다.
 		try(FileReader fr = new FileReader(fileName)) { 
@@ -64,6 +65,7 @@ public class FileReadingTest {
 		}
 	}
 
+	
 //	         ↑ 위 로직은 한글자씩 넘어오는 것 ***
 	
 //	         ↓ 아래 로직은 한 줄씩 넘어오는 것 ***
@@ -87,6 +89,8 @@ public class FileReadingTest {
 	}
 	
 	
+	
+
 	//파일에 있는 내용을 읽어서 또다른 파일로 출력하는 로직 
 	public void method2() {
 		/*
@@ -123,6 +127,9 @@ public class FileReadingTest {
 			
 		}
 	}
+	
+	
+	
 	
 	
 	// 파일에 있는 내용을 읽어서 또다른 파일로 출력하는 로직

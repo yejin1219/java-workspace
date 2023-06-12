@@ -4,7 +4,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -37,7 +36,7 @@ public class ByteStreamTest {
 			FileOutputStream fos = new FileOutputStream(outfileName);
 			
 			// 기반 스트림을 이용해서 보조스트림을 생성 
-			//DataInputStream, DataInputStream : 기본형 타입으로 읽고 쓰는 보조 스트림 
+			//DataInputStream, DataOutputStream : 기본형 타입으로 읽고 쓰는 보조 스트림 
 			 dis = new DataInputStream(fis); //기반스트림을 보조 스트림에 담음
 			 dos = new DataOutputStream(fos);
 			
@@ -66,12 +65,4 @@ public class ByteStreamTest {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-
 }
