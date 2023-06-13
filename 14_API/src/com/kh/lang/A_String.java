@@ -19,11 +19,11 @@ public class A_String {
 	public static void main(String[] args) {
 		
 		A_String a = new A_String();
-//		a.method1();
+		a.method1();
 //		a.method2();
 //		a.method3();
 //		a.method4();
-		a.method5();
+//		a.method5();
 	}
 	
 	
@@ -62,10 +62,10 @@ public class A_String {
 		System.out.println();
 		
 		//hashCode() 메서드는 String 클래스에서 오버라이딩
-		System.out.println("str1.hashCode() : " + str1.hashCode());
-		System.out.println("str2.hashCode() : " + str2.hashCode());
-		System.out.println("str3.hashCode() : " + str3.hashCode());
-		System.out.println("str4.hashCode() : " + str4.hashCode());
+		System.out.println("str1.hashCode() : " + str1.hashCode()); //str1.hashCode() : 99162322
+		System.out.println("str2.hashCode() : " + str2.hashCode()); //str2.hashCode() : 99162322
+		System.out.println("str3.hashCode() : " + str3.hashCode()); //str3.hashCode() : 99162322
+		System.out.println("str4.hashCode() : " + str4.hashCode()); //str4.hashCode() : 99162322
 		
 		System.out.println();
 		

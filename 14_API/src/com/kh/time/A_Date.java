@@ -15,7 +15,8 @@ public class A_Date {
 		a.method1();
 //		a.method2();
 //		a.method3();
-		a.practice();
+//		a.practice();
+		a.practice1();
 	}
 	
 	
@@ -182,26 +183,69 @@ public class A_Date {
 		 //입력된 형식이 잘못된 경우 다시 입력받기 
 		 public void practice() {
 			 
-			 
+			 final String[] DAY_OF_WEEK = {"","일","월","화","수","목","금","토"}; 
 			 Scanner sc = new Scanner(System.in);
 			 
+			 
+			 try {
 			 System.out.print("태어난 날 : ");
-			String date = sc.nextLine();
+			 String date = sc.nextLine();
 			 String [] strArr = date.split("/");
 			 int year = Integer.parseInt(strArr[0]);
 			 int month = Integer.parseInt(strArr[1]);
 			 int day = Integer.parseInt(strArr[2]);
-	
-		//////
-			 Date myborn = new Date(year, month-1,day);
-			 System.out.println(myborn);
 			 
-			 SimpleDateFormat sdf1 = new SimpleDateFormat("(E)");
-			 date = sdf1.format(myborn);
-			 System.out.println(date);
+			 Calendar cal1 = Calendar.getInstance();
+			 cal1.set(year, month-1, day);
+			 System.out.println( DAY_OF_WEEK[cal1.get(Calendar.DAY_OF_WEEK)] + "요일");
+			 
+			 Calendar today = Calendar.getInstance();
+			 
+			 long difference = (today.getTimeInMillis()-cal1.getTimeInMillis()) /1000;
+			 
+			 System.out.println(difference/(24*60*60) + "일 지났습니다.");
+			 
+			 }catch(NumberFormatException e) {
+				 e.printStackTrace();
+				 
+				 practice();
+			 }
+		 
+			 
+		 }
+		 
+		 
+		 public void practice1() {
+//			 10시 20분 30초
+//			 20시 30분 10초
+			 
+			 final int[] TIME_UNIT = {3600,60,1};
+			 final String[] TIME_UNIT_NAME = {"시간","분","초"};
 			 
 			 
+			 Calendar cal1 = Calendar.getInstance();
+			 Calendar cal2 = Calendar.getInstance();
 			 
+			 cal1.set(Calendar.HOUR_OF_DAY,10);
+			 cal1.set(Calendar.MINUTE,20);
+			 cal1.set(Calendar.SECOND,30);
+			 
+			 cal2.set(Calendar.HOUR_OF_DAY,20);
+			 cal2.set(Calendar.MINUTE,30);
+			 cal2.set(Calendar.SECOND,10);
+			 
+			 
+			 long difference = Math.abs(cal1.getTimeInMillis() - cal2.getTimeInMillis())/1000;
+			 System.out.println("cal1 - cal2의 차이는 " + difference+"초 입니다.");
+			 
+			 
+			 String tmp ="";
+			 for(int i = 0;i<TIME_UNIT.length;i++) {
+				 tmp += difference/TIME_UNIT[i] + TIME_UNIT_NAME[i];
+				 difference %= TIME_UNIT[i];
+			 }
+			 
+			 System.out.println (tmp);
 			 
 		 }
 		
