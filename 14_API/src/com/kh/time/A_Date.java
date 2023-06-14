@@ -1,5 +1,6 @@
 package com.kh.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,11 +13,11 @@ public class A_Date {
 		
 
 		A_Date a = new A_Date();
-		a.method1();
+//		a.method1();
 //		a.method2();
 //		a.method3();
-//		a.practice();
-		a.practice1();
+		a.practice();
+//		a.practice1();
 	}
 	
 	
@@ -183,33 +184,58 @@ public class A_Date {
 		 //입력된 형식이 잘못된 경우 다시 입력받기 
 		 public void practice() {
 			 
-			 final String[] DAY_OF_WEEK = {"","일","월","화","수","목","금","토"}; 
+			//<강사님 풀이 >
 			 Scanner sc = new Scanner(System.in);
+			 SimpleDateFormat sdf = new  SimpleDateFormat("yyyy/MM/dd");
+			 Date result = null;
 			 
+			 while(true){
+				 System.out.print("날짜를 yyyy/MM/dd 형태로 작성 : ");
+				 String data = sc.nextLine();
+				 try {
+				    result =  sdf.parse(data);
+				    break;
+				 }catch(ParseException e) {}
+			 }
 			 
-			 try {
-			 System.out.print("태어난 날 : ");
-			 String date = sc.nextLine();
-			 String [] strArr = date.split("/");
-			 int year = Integer.parseInt(strArr[0]);
-			 int month = Integer.parseInt(strArr[1]);
-			 int day = Integer.parseInt(strArr[2]);
-			 
-			 Calendar cal1 = Calendar.getInstance();
-			 cal1.set(year, month-1, day);
-			 System.out.println( DAY_OF_WEEK[cal1.get(Calendar.DAY_OF_WEEK)] + "요일");
-			 
+			 Calendar inputdate = Calendar.getInstance();
 			 Calendar today = Calendar.getInstance();
 			 
-			 long difference = (today.getTimeInMillis()-cal1.getTimeInMillis()) /1000;
+			 inputdate.setTime(result);
 			 
-			 System.out.println(difference/(24*60*60) + "일 지났습니다.");
+			 SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd은 E요일 입니다.");
+			 System.out.println(sdf2.format(result));
 			 
-			 }catch(NumberFormatException e) {
-				 e.printStackTrace();
-				 
-				 practice();
-			 }
+			 long day = (today.getTimeInMillis() - inputdate.getTimeInMillis())/(1000 *24*60*60);
+			 System.out.println("태어난 날부터 지금까지" + day + "일 지났습니다.");
+			 
+			 
+//			 final String[] DAY_OF_WEEK = {"","일","월","화","수","목","금","토"}; 
+//			 Scanner sc = new Scanner(System.in);
+//			 
+//			 try {
+//			 System.out.print("태어난 날 : ");
+//			 String date = sc.nextLine();
+//			 String [] strArr = date.split("/");
+//			 int year = Integer.parseInt(strArr[0]);
+//			 int month = Integer.parseInt(strArr[1]);
+//			 int day = Integer.parseInt(strArr[2]);
+//			 
+//			 Calendar cal1 = Calendar.getInstance();
+//			 cal1.set(year, month-1, day);
+//			 System.out.println( DAY_OF_WEEK[cal1.get(Calendar.DAY_OF_WEEK)] + "요일");
+//			 
+//			 Calendar today = Calendar.getInstance();
+//			 
+//			 long difference = (today.getTimeInMillis()-cal1.getTimeInMillis()) /1000;
+//			 
+//			 System.out.println(difference/(24*60*60) + "일 지났습니다.");
+//			 
+//			 }catch(NumberFormatException e) {
+//				 e.printStackTrace();
+//				 
+//				 practice();
+//			 }
 		 
 			 
 		 }
