@@ -62,7 +62,7 @@ public class PaymentInfoController {
   //내가 등록 한 간편결제 삭제하기
     public void deletePaymentInfo(User user ) {
     	if(us.login(this.user.getId(), this.user.getPassword())) {
-    	 paymentInfomap.remove(user.getId()) = null;
+    	 paymentInfomap.remove(user.getId());
     		
     	}
     	return;
