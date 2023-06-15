@@ -5,14 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class ChattClient {
 
 	
 	public static void main(String[] args) {
 	
-		//키보드로 입력받은 데이터를 읽어서 서버로 출력
+		//키보드로 입력받은 데이터를 읽어서 서버로 출력(전달)
 		
 		//클라이언트측 로직
 		
