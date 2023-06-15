@@ -32,6 +32,8 @@ public class Album {
 
 
 
+	
+
 	public String getTitle() {
 		return title;
 	}
