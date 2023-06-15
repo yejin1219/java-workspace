@@ -111,7 +111,9 @@ public class FileReadingTest {
 			String line = "";  
 			while((line = br.readLine()) != null) { // <- 한줄 씩 읽어옴  //4번
 				bw.write(line); // 한줄씩 쓴다.
-				bw.newLine(); // 개행문자 
+				bw.newLine();// 개행문자 
+				
+				
 			}
 			
 			
