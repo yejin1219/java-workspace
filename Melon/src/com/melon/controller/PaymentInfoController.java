@@ -7,7 +7,7 @@ import com.melon.controller.UserController;
 
 public class PaymentInfoController {
 
-	User user = null;
+	
 	
 	UserController us = new UserController();
 	private HashMap<String,PaymentInfo> paymentInfomap = new HashMap<>();
@@ -26,7 +26,7 @@ public class PaymentInfoController {
     
    //내가 등록 한 간편결제 등록 보여주기 
     public PaymentInfo getPaymentInfo (User user) {
-    	if(us.login(this.user.getId(), this.user.getPassword())) {
+    	if(us.login(user.getId(), user.getPassword())) {
     	return paymentInfomap.get(user.getId());
     	
     	}
@@ -60,11 +60,12 @@ public class PaymentInfoController {
     
     
   //내가 등록 한 간편결제 삭제하기
-    public void deletePaymentInfo(User user ) {
-    	if(us.login(this.user.getId(), this.user.getPassword())) {
+    public void deletePaymentInfo(User user) {
+    	if(us.login(user.getId(), user.getPassword())) {
     	 paymentInfomap.remove(user.getId());
     		
     	}
+    	
     	return;
     }
     

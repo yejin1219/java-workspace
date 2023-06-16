@@ -4,21 +4,19 @@ import com.melon.model.User;
 
 public interface UserControllerlmpl {
 
-	//로그인
-	public boolean login(); 
+	//로그인 
+	public boolean login(String id, String password); 
 	
 	//회원가입
-	public void signUp();
+    public boolean signUp(String id, User user);
 
-	//회원정보 수정
-    public User updateInformation();
-
-	//프로필 설정 
-    public User settingProfile();
-
-	//간편결제 관리
-    public User settingPay();
-
+    //패스워드 바꾸기
+    public boolean changePassword(String id, String oldpw, String newpw);
+    
+    
+    //닉네임 바꾸기 
+    public boolean changeNickname(String id, String pasword, String oldNickname, String newNickname);
+  
 	//계정 삭제 
-    public void deleteInformation();
+    public boolean deleteInformation(User user);
 }

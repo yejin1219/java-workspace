@@ -3,14 +3,16 @@ package com.melon.controller;
 import java.util.ArrayList;
 
 import com.melon.model.Album;
+import com.melon.model.User;
 public class AlbumController {
 
-	
+   User user = null;
 	
 	ArrayList<Album> albumlist = new ArrayList<>();
+	
 	int index = 0;
 	
-	     // 앨범 업로드
+	       // 앨범 업로드
 			public boolean uploadAlbum(Album album) {
 				return albumlist.add(album);
 	

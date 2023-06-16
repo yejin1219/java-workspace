@@ -1,49 +1,82 @@
 package com.melon.controller;
 
+import java.util.HashMap;
+
 import com.melon.model.User;
 public class UserController {
 
 	User user = null;
+	private HashMap<String,User> map = new HashMap<>();
 	
+	
+	        //회원정보 보기 
+	         public User viewUserInfo(String id) {
+	    	  if(map.containsKey(id)) {
+	    		  return map.get(id);
+	    	  }
+	    	  return null;
+	          }
+	   
 	
 	        //로그인
 			public boolean login(String id, String password) {
-				if(this.user!=null && user.getId().equals(id) && user.getPassword().equals(password)) {
-					return true;
+				if(map.containsKey(id) && map.get(id).getPassword().equals(password) ) {
+
+				return true;
 				}
 				
 				return false;
 			}
 			
 			//회원가입
-		    public void signUp(User user) {
-		    	this.user = user;
+		    public boolean signUp(String id, User user) {
+		    	if(!map.containsKey(id)) {
+		    		map.put(id, user);
+		    		return true;
+		    	}
+		    	return false;
 			}  
 
-			//회원정보 수정(로그인이 된 경우)
-		    public User updateInformation(User user) {
-		    	if(login(this.user.getId(), this.user.getPassword())) {
-		    		this.user = user;
-		    	}
-		    	return this.user;
-			}
-
-			//프로필 설정 
-		    public User settingProfile(User user) {
+		    //패스워드 바꾸기
+		    public boolean changePassword(String id, String oldpw, String newpw) {
 		    	
-		    	if(login(this.user.getId(), this.user.getPassword())) {
-		    		this.user.setNickName(user.getNickName());
+		    	if(map.containsKey(id) && map.get(id).getPassword().equals(oldpw)) {
+		    		map.get(id).setPassword(newpw);
+		    		
+		    		return true;
+		    	}
+		    	return false;
+		    }
+		    
+		    
+		    //닉네임 바꾸기 
+		    public boolean changeNickname(String id, String pasword, String oldNickname, String newNickname) {
+		    	
+		    	if(map.containsKey(id) && map.get(id).getPassword().equals(pasword)) {
+		    		map.get(id).setNickName(newNickname);
+		    	
+		    		return true;
 		    	}
 		    	
-		    	return null;
-			}
+		    	return false;
+		    }
+		    
+		  
+			
 		    
 
 			//계정 삭제 
-		    public void deleteInformation(String id) {
-		    	if(this.user.getId().equals(id)) {
-		    		user=null;
+		    public boolean deleteInformation(User user) {
+		    	if(map.containsKey(user)) {
+		    		map.remove(user);
+		    		return true;
 		    	}
-		    	return;
+		    	return false;
 		    }
+		    
+		    
+		  
+		    
+		    
+		    
 }
