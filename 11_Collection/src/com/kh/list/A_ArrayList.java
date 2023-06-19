@@ -76,7 +76,7 @@ public class A_ArrayList {
 //		                              Person [name=강호동, addr=압구정, age=52], Person [name=이시언, addr=상도, age=40], Person [name=이제훈, addr=서울숲, age=38]]
 		
 //		3. set(int index, E e) : 해당 인덱스의 값을 변경
-		list.add(3,new Person("오은영","강남",57));
+		list.set(3,new Person("오은영","강남",57));
 		System.out.println(list); // [Person [name=전현무, addr=삼성동, age=45], Person [name=유재석, addr=압구정, age=50], Person [name=남궁민, addr=서울숲, age=45], Person [name=오은영, addr=강남, age=57], 
 //		                              Person [name=강호동, addr=압구정, age=52], Person [name=이시언, addr=상도, age=40], Person [name=이제훈, addr=서울숲, age=38]]
 		
@@ -141,7 +141,7 @@ public class A_ArrayList {
 		
 		
 		// 나이 순서대로 출력
-		Collections.sort(list); // 객체 정렬시 sort를 사용하려면 Person 클래스에  implements Comparable <Person> 쓰고 compatrTo 재정의 해줘야 함 
+		Collections.sort(list); // 객체 정렬시 sort를 사용하려면 Person 클래스에  implements Comparable <Person> 쓰고 compareTo 재정의 해줘야 함 
 		System.out.println(list);
 		
 		// 이름 순서대로 출력

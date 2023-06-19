@@ -16,6 +16,8 @@ public class ChattClient {
 		//클라이언트측 로직
 		
 		try {
+			
+			
 			//1.소켓 생성
 			Socket s = new Socket("127.0.0.1", 60000); //(호스트번호, 포트번호) 
 			System.out.println("Client Socket Creating..");

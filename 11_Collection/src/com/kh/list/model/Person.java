@@ -44,14 +44,14 @@ public class Person implements Comparable <Person>{
 	
 	/*
 	 * compareTo() 메서드에서 반환되는 값을 가지고 정렬 기준을 잡는다.
-	 * - 자신과 매개값으로 던달된 객체가 같은 타입의 객체인지 비교
+	 * - 자신과 매개값으로 전달된 객체가 같은 타입의 객체인지 비교
 	 * - 비교해서 같으면 0을 반환, 자신이 크다면 양의 정수(1), 자신이 작다면 음의 정수(-1) 반환 
 	 * 
 	 */
 	@Override
 	public int compareTo(Person o) {
 //		return this.age == o.age? 0 : this.age > o.age ? 1 : -1;  나이 순서대로 출력 (재정의 해줘야 함)
-		return this.name.compareTo(o.name); //이름순으로 출력 name (Strin)은 바로 compareTo쓰면됨 
+		return this.name.compareTo(o.name); //이름순으로 출력 name (String)은 바로 compareTo쓰면됨 
 	}
 	
 	
